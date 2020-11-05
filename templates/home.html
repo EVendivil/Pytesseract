@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Athena Vision</title>
+	<style>
+		body {
+		  margin-top: 8%;
+		  text-align: center;
+		  font-family: roboto;
+		}
+
+		h3 {
+		  margin-top: 2%;
+		} 
+
+		h1 {
+		  font-size: 60px;
+		} 
+
+		p{
+			margin-top: 5%;
+		}
+
+		.upload-btn-wrapper {
+		  position: relative;
+		  overflow: hidden;
+		  display: inline-block;
+		  cursor: pointer;
+		}
+
+		.btn {
+		  border: 2px solid gray;
+		  color: gray;
+		  background-color: white;
+		  padding: 8px 20px;
+		  border-radius: 8px;
+		  font-size: 20px;
+		  font-weight: bold;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>Athena Vision</h1>
+	<h3>
+		Athena Vision is the latest OCR Technology that detects and extracts texts from receipts.
+	</h3>
+	<p>
+		Click here and upload your own image
+	</p>
+
+	<form action="/upload_image" method="POST" enctype="multipart/form-data">
+		<div class="upload-btn-wrapper">
+		  <input id="file" type="file" name="image" />
+		  <input type="submit" class="btn" value="submit"/>
+		  <!-- <button class="btn" value="submit">Upload a file</button> -->
+		</div>
+	</form>
+    {% if happy %}
+        <p>blah blah blah blah</p>
+    {% endif %}
+</body>
+</html>
