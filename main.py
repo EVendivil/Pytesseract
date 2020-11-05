@@ -1,15 +1,13 @@
 from flask import Flask, render_template, request, make_response
 from flask_restful import Api, Resource
 from PIL import Image
+from cv2 import imdecode, cvtColor, IMREAD_UNCHANGED, COLOR_BGR2RGB
 
-import cv2
 import numpy as np
 import random
 import io
 import pytesseract
 
-from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
-from matplotlib.figure import Figure
 
 app = Flask(__name__)
 api = Api(app)
@@ -23,8 +21,8 @@ def home():
 def upload_image():
 	if request.files:
 			image = request.files["image"]
-			cv_image = cv2.imdecode(np.frombuffer(image.read(), np.uint8), cv2.IMREAD_UNCHANGED)
-			cv_image = cv2.cvtColor(cv_image, cv2.COLOR_BGR2RGB)
+			cv_image = imdecode(np.frombuffer(image.read(), np.uint8), IMREAD_UNCHANGED)
+			cv_image = cvtColor(cv_image, COLOR_BGR2RGB)
 			cv_image = Image.fromarray(cv_image)
 
 			width, height = cv_image.size
