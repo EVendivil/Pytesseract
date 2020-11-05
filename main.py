@@ -14,12 +14,6 @@ from matplotlib.figure import Figure
 app = Flask(__name__)
 api = Api(app)
 
-# class TessaractApi(Resource):
-# 	def get(self):
-# 		return {"data": "hello Edward"}
-
-# api.add_resource(TessaractApi, "/")
-
 @app.route("/")
 def home():
 	print("im home")
@@ -59,6 +53,6 @@ def upload_image():
 	return render_template("upload_image.html", happy="True", tables=[output.to_html(classes='data')], titles=output.columns.values)
 
 if __name__ == "__main__":
-	app.run(debug=True)
-	# app.run(debug=True, host='0.0.0.0', port=80)
+	# app.run(debug=True)
+	app.run(debug=True, host='0.0.0.0', port=80)
 
