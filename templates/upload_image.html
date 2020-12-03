@@ -68,6 +68,11 @@
 		  <!-- <button class="btn" value="submit">Upload a file</button> -->
 		</div>
 	</form>
+	<h3> Uploaded Image </h3>
+	<div>
+		<img src="data:image/png;base64,{{image}}" alt="Image">
+	</div>
+	<h3> Words Extracted from Image</h3>
     {% if tables %}
 	  	{% for table in tables %}
             {{ table|safe }}
