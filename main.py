@@ -92,6 +92,6 @@ def upload_image():
 	return render_template("upload_image.html", happy="True", tables=[output.to_html(classes='data')], titles=output.columns.values, image=image.decode('ascii'))
 
 if __name__ == "__main__":
-	app.run(debug=True)
-	# app.run(debug=True, host='0.0.0.0', port=80)
+	# app.run(debug=True)
+	app.run(debug=True, host='0.0.0.0', port=80)
 
